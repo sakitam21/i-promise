@@ -112,8 +112,7 @@ export default {
 			list_img3:[
 				{url:require('@/assets/images/12.png')},
 				{url:require('@/assets/images/13.png')},
-				{url:require('@/assets/images/14.png')},
-				{url:require('@/assets/images/15.png')}
+				{url:require('@/assets/images/14.png')}
 			],
 
 			links_img:[
@@ -137,7 +136,7 @@ export default {
 <style scoped>
 .container{
 	width: 80%;
-	height: 1600px;
+	height: 1900px;
 	margin: 20px auto;
 }
 

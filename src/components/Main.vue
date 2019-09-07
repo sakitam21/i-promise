@@ -1,5 +1,8 @@
 <template>
   <div class="main">
+
+    <div class="border-left"></div>
+    <div class="border-right"></div>
     <header>
       <div class="header-nav">
         <div class="header-nav-left">
@@ -10,7 +13,7 @@
             <li>NEWSLETTER</li>
           </ul>
         </div>
-        <div class="header-nav-right">
+        <div class="header-nav-right" v-on:click="tologin">
           <span>LOGIN</span>
           <i class="el-icon-s-custom"></i>
         </div>
@@ -19,6 +22,7 @@
         <div class="header-logo">
           <h1>TASCHEN</h1>
         </div>
+        <div class="menu-display">
         <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" background-color="#000" text-color="#ccc" active-text-color="#fff" @select="handleSelect">
           <el-menu-item index="1">BOOKS</el-menu-item>
           <el-menu-item index="2">LIMITED EDITIONS</el-menu-item>
@@ -31,6 +35,7 @@
           <i class="el-icon-shopping-cart-1"></i>
           <i class="el-icon-search"></i>
         </div>
+        </div>
       </div>
     </header>
 
@@ -38,8 +43,6 @@
       <div class="wrapper-content">
         <router-view></router-view>
       </div>
-      <div class="border-left"></div>
-      <div class="border-right"></div>
     </div>
 
     <footer>
@@ -49,6 +52,7 @@
 </template>
 
 <script>
+import router from '@/router'
 export default {
   name: 'Main',
   data: function() {
@@ -59,7 +63,11 @@ export default {
   methods: {
     handleSelect: function(key,keyPath) {
       console.log(key,keyPath)
-    }
+    },
+
+    tologin: function() {
+      router.push({ name: 'Login'})
+    },
   }
 }
 </script>
@@ -68,7 +76,28 @@ export default {
 <style scoped>
 .main{
   width: 100vw;
-  height: 2600px;
+}
+
+.border-left{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 600;
+}
+
+.border-right{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 30px; 
+  height: 100vh;
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 600;
 }
 
 .header-nav{
@@ -134,6 +163,10 @@ export default {
   color: #fff;
 }
 
+.menu-display{
+  display: block;
+}
+
 .header-menu-right{
   width: 160px;
   height: 60px;
@@ -152,27 +185,6 @@ export default {
   background-color: #fff;
 }
 
-.wrapper .border-left{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 2700px;  
-  background-color: #000;
-  opacity: 0.8;
-  z-index: 600;
-}
-
-.wrapper .border-right{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 30px; 
-  height: 2700px;
-  background-color: #000;
-  opacity: 0.8;
-  z-index: 600;
-}
 
 .wrapper .wrapper-content{
   left: 0;
@@ -191,5 +203,25 @@ export default {
   color: #EAEAEA;
   font-size: 18px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 550px){
+
+.menu-display{
+  display: none;
+}
+
+.header-nav{
+  display: none;
+}
+
+.header-menu{
+  top: 0;
+}
+
+.wrapper{
+  padding-top: 60px;
+}
+
 }
 </style>
