@@ -35,4 +35,14 @@ export default {
 .el-menu{
   border: none !important;
 }
+
+.el-carousel__arrow{
+  margin: 0 30px 0 30px;
+  width: 48px;
+  height: 48px;
+  font-size: 24px !important;
+  border-radius: 24px;
+  background-color: #000;
+  opacity: 0.8;
+}
 </style>

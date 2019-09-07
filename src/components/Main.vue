@@ -41,6 +41,10 @@
       <div class="border-left"></div>
       <div class="border-right"></div>
     </div>
+
+    <footer>
+      <div class="footer">Footer</div>
+    </footer>
   </div>
 </template>
 
@@ -49,7 +53,7 @@ export default {
   name: 'Main',
   data: function() {
     return {
-      activeIndex: '1'
+      activeIndex: ''
     }
   },
   methods: {
@@ -63,9 +67,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .main{
-  position: absolute;
   width: 100vw;
-  height: 2000px;
+  height: 2600px;
 }
 
 .header-nav{
@@ -142,7 +145,6 @@ export default {
 }
 
 .wrapper{
-  position: absolute;
   font-size: 14px;
   padding-top: 86px;
   width: 100vw;
@@ -152,10 +154,10 @@ export default {
 
 .wrapper .border-left{
   position: absolute;
+  top: 0;
   left: 0;
-  margin-top: -60px;
   width: 30px;
-  height: 100%;  
+  height: 2700px;  
   background-color: #000;
   opacity: 0.8;
   z-index: 600;
@@ -163,20 +165,31 @@ export default {
 
 .wrapper .border-right{
   position: absolute;
+  top: 0;
   right: 0;
-  margin-top: -60px;
-  width: 30px;
-  height: 100%;  
+  width: 30px; 
+  height: 2700px;
   background-color: #000;
   opacity: 0.8;
   z-index: 600;
 }
 
 .wrapper .wrapper-content{
-  position: absolute;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
+}
+
+.footer{
+  background-color: #000;
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  z-index: 1000;
+  text-align: center;
+  color: #EAEAEA;
+  font-size: 18px;
+  font-weight: bold;
 }
 </style>
