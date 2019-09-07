@@ -1,0 +1,182 @@
+<template>
+  <div class="main">
+    <header>
+      <div class="header-nav">
+        <div class="header-nav-left">
+          <ul class="header-nav-list">
+            <li><i class="el-icon-s-flag" style="color: red;font-size: 16px;"></i></li>
+            <li>BESTSELLERS</li>
+            <li>CONTACT</li>
+            <li>NEWSLETTER</li>
+          </ul>
+        </div>
+        <div class="header-nav-right">
+          <span>LOGIN</span>
+          <i class="el-icon-s-custom"></i>
+        </div>
+      </div>
+      <div class="header-menu">
+        <div class="header-logo">
+          <h1>TASCHEN</h1>
+        </div>
+        <el-menu :default-active="activeIndex" class="el-menu" mode="horizontal" background-color="#000" text-color="#ccc" active-text-color="#fff" @select="handleSelect">
+          <el-menu-item index="1">BOOKS</el-menu-item>
+          <el-menu-item index="2">LIMITED EDITIONS</el-menu-item>
+          <el-menu-item index="3">PRINT EDITIONS</el-menu-item>
+          <el-menu-item index="4">STORES</el-menu-item>
+          <el-menu-item index="5">INSPIRATION</el-menu-item>
+          <el-menu-item index="6">PLANET TASCHEN</el-menu-item>
+        </el-menu>
+        <div class="header-menu-right">
+          <i class="el-icon-shopping-cart-1"></i>
+          <i class="el-icon-search"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="wrapper">
+      <div class="wrapper-content">
+        <router-view></router-view>
+      </div>
+      <div class="border-left"></div>
+      <div class="border-right"></div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'Main',
+  data: function() {
+    return {
+      activeIndex: '1'
+    }
+  },
+  methods: {
+    handleSelect: function(key,keyPath) {
+      console.log(key,keyPath)
+    }
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.main{
+  position: absolute;
+  width: 100vw;
+  height: 2000px;
+}
+
+.header-nav{
+  width: 92%;
+  height: 26px;
+  padding: 0 4%;
+  background-color: #f5f5f5;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-nav-left{
+  height: 26px;
+  line-height: 26px;
+  float: left;
+}
+
+.header-nav-left ul li{
+  height: 26px;
+  list-style: none;
+  display: inline;
+  float: left;
+  font-size: 12px;
+  margin-left: 15px;
+}
+
+.header-nav-right{
+  height: 26px;
+  float: right;
+  font-size: 12px;
+  line-height: 26px;
+}
+
+.header-nav-right .el-icon-s-custom{
+  font-size: 16px;
+}
+
+.header-menu{
+  width: 100%;
+  height: 60px;
+  padding: 0 30px 0 30px;
+  position: fixed;
+  top: 26px;
+  z-index: 1000;
+  background-color: #000;
+}
+
+.header-logo{
+  margin-left: 30px;
+  width: 180px;
+  height: 60px;
+  line-height: 60px;
+  color: #fff;
+  float: left;
+}
+
+.el-menu{
+  width: 60%;
+  height: 60px;
+  float: left;
+  font-size: 12px;
+  color: #fff;
+}
+
+.header-menu-right{
+  width: 160px;
+  height: 60px;
+  float: right;
+  color: #ccc;
+  font-size: 26px;
+  font-weight: bold;
+  line-height: 60px;
+}
+
+.wrapper{
+  position: absolute;
+  font-size: 14px;
+  padding-top: 86px;
+  width: 100vw;
+  height: 100%;
+  background-color: #fff;
+}
+
+.wrapper .border-left{
+  position: absolute;
+  left: 0;
+  margin-top: -60px;
+  width: 30px;
+  height: 100%;  
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 600;
+}
+
+.wrapper .border-right{
+  position: absolute;
+  right: 0;
+  margin-top: -60px;
+  width: 30px;
+  height: 100%;  
+  background-color: #000;
+  opacity: 0.8;
+  z-index: 600;
+}
+
+.wrapper .wrapper-content{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+</style>
