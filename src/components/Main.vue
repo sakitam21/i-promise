@@ -10,7 +10,7 @@
         </div>
       </div>
       <div class="common-nav-right">
-        <div class="login">
+        <div class="common-nav-login">
           <router-link :to="{name:'login'}">
             <i class="el-icon-user-solid"></i>
             login
@@ -24,9 +24,9 @@
       <div class="header" :style="headerstyle">
         <div class="header-nav">
           <ul>
-            <li>商城</li>
-            <li>投稿箱</li>
-            <li>种树</li>
+            <li>Mall</li>
+            <li>Contribution</li>
+            <li>Forest</li>
           </ul>
         </div>
         <div class="header-search">
@@ -41,11 +41,78 @@
       </div>
     </header>
 
+    <div class="common-menu">
+      <ul class="common-menu-list">
+        <li v-for="(item,index) in menulists" :key="index">
+          <router-link :to="{ name: 'menulist', params: { listid: index }}">
+            {{item.infolist_name}}
+          </router-link>
+          <div class="divide" v-if="index>0"></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      <div class="container-item-0">
+        <div class="item-title">
+          Minions
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+      <div class="container-item-1">
+        <div class="item-title">
+          Pokemon
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+      <div class="container-item-2">
+        <div class="item-title">
+          Pokemon
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+      <div class="container-item-3">
+        <div class="item-title">
+          Pokemon
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+      <div class="container-item-4">
+        <div class="item-title">
+          Pokemon
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+      <div class="container-item-5">
+        <div class="item-title">
+          Pokemon
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+      <div class="container-item-6">
+        <div class="item-title">
+          Pokemon
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+      <div class="container-item-7">
+        <div class="item-title">
+          Pokemon
+        </div>
+        <div class="item-body">aaa</div>
+      </div>
+    </div>
+
+    <Footer>
+      <div class="footer">Footer</div>
+    </Footer>
+
   </div>
 </template>
 
 <script>
 import router from '@/router'
+import axios from 'axios'
 export default {
   name: 'Main',
   data: function() {
@@ -57,10 +124,26 @@ export default {
         backgroundSize: "cover"
       },
       //search body
-      searchbody:""
+      searchbody:"",
+      //menu list
+      menulists:[],
 
     }
-  }
+  },
+
+  created: function(){
+    const that = this
+    //get infolist as menulist[]
+    axios.get('/infolists/search')
+    .then(function(response) {
+      that.menulists = response.data
+      console.log(that.menulists)
+    }).catch(function(error) {
+      console.log(error)
+    })
+    //get listcontents
+  },
+
 }
 </script>
 
@@ -105,6 +188,7 @@ export default {
     list-style: none;
     margin-left: 20px;
     color: #ccc;
+    font-weight: bold;
   }
 
   .header .header-search{
@@ -153,6 +237,73 @@ export default {
     color: #6CA6CD;
   }
 
+  .common-menu{
+    width: 80%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    margin: 10px auto;
+    /*background-color: #ccc;*/
+  }
+
+  .common-menu a{
+    color: #6CA6CD;
+  }
+
+  .common-menu ul li{
+    display: inline-block;
+    list-style: none;
+    padding:0 10px 0 5px; 
+    font-size: 14px;
+    font-weight: bold;
+    color: #6CA6CD;
+  }
+
+  .divide{
+    display: inline-block;
+    float: left;
+    width: 3px;
+    height: 20px;
+    margin-right: 15px;
+    margin-top: 10px;
+    border-radius: 1px;
+    background-color: #CCC;
+  }
+
+  .container-item-0,.container-item-1,.container-item-2,.container-item-3,.container-item-4,.container-item-5,.container-item-6,.container-item-7{
+    width: 90%;
+    margin: 10px auto;
+    height: 400px;
+    background-color: #EAEAEA;
+  }
+
+   .item-title{
+    width: auto;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+    font-size: 18px;
+    margin: 0 10px 0 10px;
+    display: inline-block;
+  }
+
+   .item-body{
+    width: 100%;
+    height: 360px;
+    border: 1px solid black;
+    display: inline-block;
+  }
+
+  .footer{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #6CA6CD;
+  }
+
+
   @media screen and (max-width: 420px){
     .header{
       width: 90%;
@@ -193,6 +344,17 @@ export default {
       margin-top: 12px;
       margin-left: -20px;
       font-size: 18px;
+    }
+
+    .common-menu{
+      width: 80%;
+      height: 120px;
+      line-height: 30px;
+    }
+
+    .divide{
+      height: 16px;
+      margin-top: 6px;
     }
 
   }
