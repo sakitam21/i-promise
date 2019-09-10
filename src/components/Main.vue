@@ -323,13 +323,13 @@ export default {
     .header .header-search{
       width: 200px;
       height: 40px;
-      margin-top: 140px;
+      margin-top: 130px;
       margin-right: 10px;
       line-height: 40px;
     }
 
     .header-search .header-logo{
-      width: 26%;
+      width: 30%;
       height: 40px;
       font-size: 12px;
     }
