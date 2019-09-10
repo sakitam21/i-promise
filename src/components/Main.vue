@@ -239,7 +239,7 @@ export default {
 
   .common-menu{
     width: 80%;
-    height: 40px;
+    /*height: 40px;*/
     line-height: 40px;
     text-align: center;
     margin: 10px auto;
