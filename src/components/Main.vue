@@ -321,7 +321,7 @@ export default {
     }
 
     .header .header-search{
-      width: 240px;
+      width: 60%;
       height: 40px;
       margin-top: 130px;
       margin-right: 10px;
@@ -329,15 +329,17 @@ export default {
     }
 
     .header-search .header-logo{
-      width: 26%;
+      width: 30%;
       height: 40px;
       font-size: 12px;
+      display: inline-block;
     }
 
     .header-search .header-input{
       width: 68%;
       height: 20px;
-      margin-left: 6px;
+      margin-left: 2%;
+      display: inline-block;
     }
 
     .header-search i{
