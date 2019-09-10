@@ -304,7 +304,7 @@ export default {
   }
 
 
-  @media screen and (max-width: 420px){
+  @media screen and (max-width: 500px){
     .header{
       width: 90%;
       height: 200px;
