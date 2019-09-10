@@ -321,7 +321,7 @@ export default {
     }
 
     .header .header-search{
-      width: 200px;
+      width: 240px;
       height: 40px;
       margin-top: 130px;
       margin-right: 10px;
@@ -329,7 +329,7 @@ export default {
     }
 
     .header-search .header-logo{
-      width: 30%;
+      width: 26%;
       height: 40px;
       font-size: 12px;
     }
