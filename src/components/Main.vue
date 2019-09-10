@@ -52,61 +52,6 @@
       </ul>
     </div>
 
-    <div class="container">
-      <div class="container-item-0">
-        <div class="item-title">
-          Minions
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-      <div class="container-item-1">
-        <div class="item-title">
-          Pokemon
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-      <div class="container-item-2">
-        <div class="item-title">
-          Pokemon
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-      <div class="container-item-3">
-        <div class="item-title">
-          Pokemon
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-      <div class="container-item-4">
-        <div class="item-title">
-          Pokemon
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-      <div class="container-item-5">
-        <div class="item-title">
-          Pokemon
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-      <div class="container-item-6">
-        <div class="item-title">
-          Pokemon
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-      <div class="container-item-7">
-        <div class="item-title">
-          Pokemon
-        </div>
-        <div class="item-body">aaa</div>
-      </div>
-    </div>
-
-    <Footer>
-      <div class="footer">Footer</div>
-    </Footer>
-
   </div>
 </template>
 
@@ -269,40 +214,6 @@ export default {
     border-radius: 1px;
     background-color: #CCC;
   }
-
-  .container-item-0,.container-item-1,.container-item-2,.container-item-3,.container-item-4,.container-item-5,.container-item-6,.container-item-7{
-    width: 90%;
-    margin: 10px auto;
-    height: 400px;
-    background-color: #EAEAEA;
-  }
-
-   .item-title{
-    width: auto;
-    height: 40px;
-    line-height: 40px;
-    float: left;
-    font-size: 18px;
-    margin: 0 10px 0 10px;
-    display: inline-block;
-  }
-
-   .item-body{
-    width: 100%;
-    height: 360px;
-    border: 1px solid black;
-    display: inline-block;
-  }
-
-  .footer{
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
-    font-size: 20px;
-    text-align: center;
-    background-color: #6CA6CD;
-  }
-
 
   @media screen and (max-width: 500px){
     .header{
